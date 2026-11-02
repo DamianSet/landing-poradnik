@@ -1,0 +1,43 @@
+# Publikacja strony na GitHub Pages.
+# Uruchamia się po każdym pushu do gałęzi main (i ręcznie z zakładki Actions).
+# Publikowany jest wyłącznie katalog site/.
+#
+# Jednorazowa konfiguracja w repozytorium:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+name: Publikacja na GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pobranie kodu
+        uses: actions/checkout@v4
+
+      - name: Konfiguracja Pages
+        uses: actions/configure-pages@v5
+
+      - name: Przygotowanie paczki ze stroną
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Publikacja
+        id: deployment
+        uses: actions/deploy-pages@v4
