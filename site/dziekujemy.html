@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dziękujemy za zakup! | Skillset Academy</title>
+  <meta name="theme-color" content="#4f2bd6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="config.js"></script>
+</head>
+<body class="thanks-page">
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="logo" href="index.html" style="text-decoration:none">Skillset<span class="logo__accent">Academy</span></a>
+  </div>
+</header>
+
+<!--
+  STRONA PODZIĘKOWANIA - na ten adres operator płatności ma przekierować klienta
+  po udanej płatności (np. https://TWOJA-DOMENA/dziekujemy.html).
+  Tutaj wysyłane jest zdarzenie Purchase do Piksela Meta.
+-->
+<main class="thanks">
+  <div class="wrap wrap--narrow">
+    <span class="thanks__icon" aria-hidden="true">🎉</span>
+    <h1>Dziękujemy za zakup!</h1>
+    <p class="lead">
+      Twoje zamówienie poradnika „<span data-config="product.name">Grafiki i wideo z AI</span>” zostało przyjęte.
+    </p>
+    <!-- UZUPEŁNIJ: dopasuj do tego, jak faktycznie dostarczasz plik (np. e-mail od operatora płatności) -->
+    <p>
+      Link do pobrania poradnika (PDF) wraz ze ściągawką wysłaliśmy na adres e-mail podany przy płatności.
+      Jeśli nie widzisz wiadomości w ciągu kilkunastu minut, sprawdź folder <strong>Spam</strong> lub <strong>Oferty</strong>.
+    </p>
+    <p>
+      Problem z dostępem? Napisz na
+      <a data-config-mailto="seller.email" href="#"><span data-config="seller.email">adres e-mail</span></a> –
+      odpowiemy najszybciej, jak to możliwe.
+    </p>
+    <p class="trainings">
+      Chcesz pójść o krok dalej? Zajrzyj do rozdziału o szkoleniach AI <strong>Skillset Academy</strong>.
+      <a class="js-trainings-link" href="#" hidden>Zobacz szkolenia →</a>
+    </p>
+    <p style="margin-top:2em"><a href="index.html">← Wróć na stronę główną</a></p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <nav class="footer__links">
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="#" class="js-cookie-settings">Ustawienia cookies</a>
+    </nav>
+    <p class="footer__copy">© <span class="js-year">2026</span> Skillset Academy</p>
+  </div>
+</footer>
+
+<script src="assets/js/tracking.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/purchase.js" defer></script>
+</body>
+</html>
